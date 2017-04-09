@@ -4,7 +4,8 @@
 }
 
 body{
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h1{
@@ -13,14 +14,12 @@ h1{
 
 /* Transition JS hook */
 .transition-hook{
-  padding: 0 100px 0 100px;
 
 }
 .transition-hook__wrap{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 100px;
 }
 .transition-hook__block{
   width: 100px;
@@ -42,4 +41,101 @@ h1{
 .transition-hook__block span{
   font-size: 40px;
   line-height: 1;
+}
+
+/* Form validation */
+.form-validation{
+
+}
+
+
+.form-validation__label{
+  display: block;
+  margin-bottom: 30px;
+}
+
+.form-validation__field:valid{
+  outline-color: green;
+}
+
+.form-validation__field:invalid{
+  outline-color: red;
+}
+
+.form-validation__field:in-range:after{
+  content: "In range";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:out-of-range:after{
+  content: "Out of range";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:required{
+
+}
+
+.form-validation__field:optional{
+
+}
+
+.form-validation__field:default:after{
+  content: "Default";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:disabled:after{
+  content: "disabled";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:enabled:after{
+  content: "enabled";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:read-only:after{
+  content: "read-only";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:read-write:after{
+  content: "read-only";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:checked{
+
+}
+
+.form-validation__field:indeterminate:after{
+  content: "indeterminate";
+  display: block;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.form-validation__field:focus{
+  outline-color: blue;
+}
+
+
+/* Helpers */
+.mb50{
+  margin-bottom: 50px;
 }
