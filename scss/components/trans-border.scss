@@ -1,0 +1,14 @@
+/* Transparent border */
+.transparent-border{
+  background-image: url('http://bgfons.com/upload/brick_texture3348.jpg');
+
+  h2{
+    color: #ffffff;
+  }
+
+  &__elem{
+    border: 10px solid hsla(0,0%,100%, 0.5);
+    background-color: #aaaaaa;
+    background-clip: padding-box;
+  }
+}

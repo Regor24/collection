@@ -5,7 +5,6 @@
     console.log('ready');
   }
   document.addEventListener('DOMContentLoaded', ready);
-
 })();
 
 
@@ -32,6 +31,7 @@ var singleton = function(){
       key.classList.add('active');
     });
   }
+  // end;
 
   // Spread & Rest
   function spread() {
@@ -40,14 +40,55 @@ var singleton = function(){
     var arr3 = ['z', ...arr1] ;   // 'z','1','2','3'
     console.log('spread', arr2);
   }
+  // end;
+
+  // Drag and drop
+  function dragDrop() {
+    const block = document.querySelector('.js-drag-n-drop');
+    const containerPosition = document.querySelector('.js-drag-n-drop-container').getBoundingClientRect();
+
+    // Отключаем собственный дрэг дроп браузера.
+    // Он срабатывает для картинок, например. Те самые полупрозрачные фантомы картинок, ага.
+    block.ondragstart = function() {
+      return false;
+    };
+
+    block.addEventListener('mousedown', function(e) { // 1. отследить нажатие
+      // подготовить к перемещению
+      // 2. разместить на том же месте, но в абсолютных координатах
+      block.style.position = 'absolute';
+      moveAt(e);
+
+      block.style.zIndex = 1000; // показывать над другими элементами
+
+      // передвинуть под координаты курсора
+      // и сдвинуть на половину ширины/высоты для центрирования
+      function moveAt(e) {
+        block.style.left = e.clientX - block.offsetWidth / 2 + 'px';
+        block.style.top =  e.clientY - block.offsetHeight / 2 - containerPosition.top + 'px';
+      }
+
+      // 3, перемещать по экрану
+      document.onmousemove = function(e) {
+        moveAt(e);
+      }
+
+      // 4. отследить окончание переноса
+      block.onmouseup = function() {
+        document.onmousemove = null;
+        block.onmouseup = null;
+      }
+    });
+  }
 
   // Expose API
   return {
     transitionEvent: transitionEvent,
-    spread: spread
+    spread: spread,
+    dragDrop: dragDrop
   }
 }();
 
 
 // LOAD TEST:
-singleton.transitionEvent();
+singleton.dragDrop();
