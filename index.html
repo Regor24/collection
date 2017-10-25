@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
   <title>Collection</title>
 </head>
 <body>
@@ -20,6 +20,63 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="main.js"></script>
+  <div class="transparent-border">
+    <h2>Transparent border - hsla on border, background-clip: padding-box</h2>
+    <p class="transparent-border__elem">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente ut, veritatis hic exercitationem, est quas at iusto?
+      Possimus quo praesentium magnam vitae non quidem quasi id ducimus officia excepturi, rerum?
+    </p>
+  </div>
+
+  <div class="form-validation mb50">
+    <h2>Form validation</h2>
+    <form action="" method="">
+      <label class="form-validation__label" for="">
+        Text
+        <input class="form-validation__field" type="text" name="" value="" required>
+      </label>
+      <label class="form-validation__label" for="">
+        Number
+        <input class="form-validation__field" type="number" name="" value="" required>
+      </label>
+      <label class="form-validation__label" for="">
+        Date
+        <input class="form-validation__field" type="date" name="" value="" required>
+      </label>
+      <label class="form-validation__label" for="">
+        Email
+        <input class="form-validation__field" type="email" name="" value="" required>
+      </label>
+      <label class="form-validation__label" for="">
+        Phone
+        <input class="form-validation__field" type="phone" name="" value="" required>
+      </label>
+      <label class="form-validation__label" for="">
+        Range
+        <input class="form-validation__field" type="range" name="" value="" required>
+      </label>
+
+      <button type="submit" name="button">Submit</button>
+    </form>
+  </div>
+
+  <div class="container container--fullscreen drag-n-drop js-drag-n-drop-container">
+    <div class="block js-drag-n-drop">
+      <div class="block__dragger"></div>
+      <div class="block__content">
+        <div class="block__item"><span class="block__text">Т</span></div>
+        <div class="block__item"><span class="block__text">В</span></div>
+        <div class="block__item"><span class="block__text">О</span></div>
+        <div class="block__item"><span class="block__text">И</span></div>
+        <div class="block__item"><span class="block__text">М</span></div>
+        <div class="block__item"><span class="block__text">Е</span></div>
+        <div class="block__item"><span class="block__text">Ч</span></div>
+        <div class="block__item"><span class="block__text">Т</span></div>
+        <div class="block__item"><span class="block__text">Ы</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

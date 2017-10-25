@@ -1,0 +1,30 @@
+/* Transition JS hook */
+.transition-hook{
+
+}
+.transition-hook__wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.transition-hook__block{
+  width: 100px;
+  height: 100px;
+  background: violet;;
+  border: 3px solid violet;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+.transition-hook__block.active{
+  border: 30px solid yellow;
+  border-radius: 50%;
+  transform: scale(1.3);
+}
+.transition-hook__block span{
+  font-size: 40px;
+  line-height: 1;
+}
