@@ -7,42 +7,6 @@
   document.addEventListener('DOMContentLoaded', ready);
 })();
 
-<<<<<<< HEAD:main.js
-// Правильный хук на событие transition
-var keys = document.querySelectorAll('.transition-hook__block');
-
-function removeEffect(e) {
-  // Суть - в данный момент событие transitionend срабатывает много раз на разные события - это зависит от цсс - у нас там и бордер, и скейл и прочее.
-  // Нам нужна только трансформация-скейл, поэтому отлавливаем окончание этого события и тут же убираем класс.
-  if (e.propertyName !== 'transform') return;
-  this.classList.remove('active');
-}
-
-keys.forEach(key => key.addEventListener('transitionend', removeEffect));
-window.addEventListener("keydown", (e) => {
-  var key = document.querySelector('.transition-hook__block[data-key="' + e.keyCode + '"]');
-  if (!key) return;
-  key.classList.add('active');
-});
-
-// Let, const, var
-let fVar = function () {
-  console.log('sadsad!!');
-}
-
-// Spread & Rest
-function spread() {
-  var arr1 = ['1','2','3'];
-  var arr2 = [...arr1, 'z'];    // '1','2','3', 'z'
-  var arr3 = ['z', ...arr1] ;   // 'z','1','2','3'
-  console.log('spread', arr2);
-}
-
-// LOAD TEST:
-spread();
-=======
-
-
 // Синглтон
 // Expose module as global variable
 var singleton = function(){
@@ -123,7 +87,22 @@ var singleton = function(){
   }
 }();
 
+// Деструктуризация
+// Массивов
+function destrArray(a, b) {
+  let [z=1, x=2] = [a, b]; // через = дефолтные значения, если массив значений (справа) пуст или значения undefined
+  console.log(z, x);
+}
+// Объектов
+function destrObj(a, b) {
+  let z, x; // Если переменные объявлены ранее, то:
+  ({z:c = 1, x = 2} = {z:a, x:b});  // нужно обернуть в (), т.к. это "особенность" языка - {} считается за блок, а не объект и всё ломается.
+  // Если объвить по месту, как с массивами, то все нормально.
+  // Деструктурируемые объекты содержат также еще одну возможность - определить другое имя переменной через двоеточие
+  console.log(c, x); // В данном случае выводим 'c' вместо 'z', т.к. определили это ранее.
+}
+
+
 
 // LOAD TEST:
-singleton.dragDrop();
->>>>>>> 2ed4ad2efe326b3f8d9d08ba47a2584d301ced6c:js/main.js
+destrObj(3, 4);
